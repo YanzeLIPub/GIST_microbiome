@@ -3,4 +3,5 @@ Code used in Intratumoral Microbiome Predicts Liver Metastasis and Informs Effec
  
  Contains model code and original microbiome read count matrix
 
-[Graphical abstract.pdf](https://github.com/YanzeLIPub/GIST_microbiome/files/12440121/Graphical.abstract.pdf)
+
+![image](https://github.com/YanzeLIPub/GIST_microbiome/assets/143196047/7a038cee-f6cc-4b5f-836e-1903ef0ce4fc)
