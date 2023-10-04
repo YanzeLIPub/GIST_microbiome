@@ -1,4 +1,4 @@
-setwd("D:/GIST 16s/GIST_publicdata")
+setwd("")
 
 L6data<-read.csv("level-6_matrix.csv",header=TRUE)
 L6data78<-read.csv("level-6_78samples_count.csv",header=TRUE)
