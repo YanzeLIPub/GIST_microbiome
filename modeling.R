@@ -167,7 +167,7 @@ to_compare[is.na(to_compare)]<-0
 write.csv(to_compare,"taxa_corrected2_ALL_B1_matrix_2group.csv")
 
 #############################Risk Prediction#############################################
-#########74个训练数据############
+#########train data set############
 library("LiblineaR")
 meta.and.features <- read.lefse("LEfSeRisk_74_train_0.1.tsv",
                                 rows.meta = 1:3, row.samples = 4)
@@ -345,7 +345,9 @@ to_compare<-tapply(table$RA,list(table$genus,table$index),median)
 to_compare[is.na(to_compare)]<-0
 #write.csv(to_compare,"taxa_corrected2_Union_matrix.csv")
 
-#########74个训练数据############
+#########train data set############
+#meta.and.features <- read.lefse("74_trainSet_LM.tsv",
+#                                rows.meta = 1:8, row.samples = 9)
 meta.and.features <- read.lefse("LEfSe_31_nonAI_all_v2.tsv",
                                 rows.meta = 1:8, row.samples = 9)
 meta <- meta.and.features$meta
@@ -355,8 +357,8 @@ siamcat  <- siamcat(feat=feat, meta=meta,
                     label='Liver_metastasis', case='Yes')
 
 #######34-test###########
-#######31-non-AI###########
-#######77-AI###########
+#########################
+#######77-AI#############
 #meta.and.features_test <- read.lefse("LEfSe_34_test_0.1_corr_v2.tsv",
 #                                     rows.meta = 1:8, row.samples = 9)
 
