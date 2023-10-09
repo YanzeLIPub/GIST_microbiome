@@ -1,8 +1,0 @@
-|-- 00.Rawdata/	[Raw reads]
-|	|-- Sample_Name/	[Raw data for each sample]
-|	|	|--*.raw_1.fq.gz	[Read 1 sequences with barcodes and primers]
-|	|	|--*.raw_2.fq.gz	[Read 2 sequences with barcodes and primers]
-|	|	|--*_1.fastq.gz	[Read 1 sequences with barcode and primer removed]
-|	|	|--*_2.fastq.gz	[Read 2 sequences with barcode and primer removed]
-|	|	|--*.extendedFrags.fastq.gz [Merged reads]
-|	`-- SampleSeq_info.xls	[List of barcodes and primers]
