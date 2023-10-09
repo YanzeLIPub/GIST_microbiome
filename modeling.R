@@ -460,40 +460,7 @@ model.interpretation.plot(siamcat,
 siamcat <- check.associations(siamcat, log.n0 = 1e-06, alpha = 0.05)
 association.plot(siamcat, sort.by = 'fc', fn.plot = 'nonAI_association_selection.pdf',
                  panels = c('fc', 'prevalence', 'auroc'))
-####################nonAI selection#########################
-library(SIAMCAT)
-meta.and.features <- read.lefse("LEfSe_31_nonAI_all_v2.tsv",
-                                rows.meta = 1:8, row.samples = 9)
-meta <- meta.and.features$meta
-feat <- meta.and.features$feat
 
-label <- create.label(meta=meta, label="Liver_metastasis", case = "Yes")
-
-siamcat <- siamcat(feat=feat, label=label, meta=meta)
-
-sc.obj <- filter.features(siamcat,
-                          filter.method = 'abundance',
-                          cutoff = 0.001)
-
-sc.obj <- check.associations(sc.obj, log.n0 = 1e-06, alpha = 0.05)
-association.plot(sc.obj, sort.by = 'fc', fn.plot = '31association_plots_Live_metastasis_cotoff0.1.pdf',
-                 panels = c('fc', 'prevalence', 'auroc'))
-
-check.confounders(sc.obj, fn.plot = '31confounder_plotsLive_metastasis_cotoff0.1.pdf',
-                  meta.in = NULL, feature.type = 'filtered')
-sc.obj <- normalize.features(sc.obj, norm.method = "log.unit",
-                             norm.param = list(log.n0 = 1e-05, n.p = 2,norm.margin = 1))
-sc.obj <-  create.data.split(sc.obj, num.folds = 5, num.resample = 3)
-sc.obj <- train.model(sc.obj, method = "lasso")
-model_type(sc.obj)
-models <- models(sc.obj)
-models[[1]]$model
-sc.obj <- make.predictions(sc.obj)
-pred_matrix <- pred_matrix(sc.obj)
-sc.obj <-  evaluate.predictions(sc.obj)
-model.evaluation.plot(sc.obj,fn.plot = '31evaluationLive_metastasis_cotoff0.1.pdf')
-model.interpretation.plot(sc.obj, fn.plot = '31interpretationLive_metastasis_cotoff0.1.pdf',
-                          consens.thres = 0.5, limits = c(-3, 3), heatmap.type = 'zscore')
 
 
 
