@@ -10,6 +10,9 @@ Code used in Intratumoral Microbiome Predicts Liver Metastasis and Informs Effec
   The training data used in the paper is placed in the Risk Model Data and Metastasis Model Data folders. 
   
   You can also use your own data to test the model.
+  
+  After clone this repositorie
 
+  You can run 'Rscript modeling.R" or activate R environment to run this script 'source("modeling.R"). Of course you need to install all dependent R packages.
 
 ![image](https://github.com/YanzeLIPub/GIST_microbiome/assets/143196047/7a038cee-f6cc-4b5f-836e-1903ef0ce4fc)
