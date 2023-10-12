@@ -1,6 +1,4 @@
 
-####################modeling###################
-library(SIAMCAT)
 ######################packages########################
 library(vegan)
 library(MMUPHin)
